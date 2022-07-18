@@ -12,7 +12,7 @@ body {
 model-viewer {
   width: 100vw;
   height: 100vh;
-  background-color: #ffffff;
+  background-color: #a7f6ff;
 }
 
 .Hotspot {
@@ -22,11 +22,11 @@ model-viewer {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
   cursor: pointer;
-  height: 24px;
+  height: 8px;
   padding: 8px;
   position: relative;
   transition: opacity 0.3s;
-  width: 24px;
+  width: 8px;
 }
 
 .Hotspot:not([data-visible]) {
@@ -57,12 +57,12 @@ model-viewer {
   color: rgba(0, 0, 0, 0.8);
   display: block;
   font-family: Futura, Helvetica Neue, sans-serif;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 700;
   left: calc(100% + 1em);
   max-width: 128px;
   overflow-wrap: break-word;
-  padding: 0.5em 1em;
+  padding: 4px;
   position: absolute;
   top: 50%;
   width: max-content;
@@ -161,4 +161,16 @@ model-viewer[ar-status="session-started"] > #ar-prompt {
 
 model-viewer > #ar-prompt > img {
   animation: circle 4s linear infinite;
+}
+
+.btn-back{
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  border: none;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  transform: translate(-50%);
 }

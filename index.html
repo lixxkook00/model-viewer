@@ -15,7 +15,7 @@
     <model-viewer 
         id="hotspot-camera-view-demo"  
         bounds="tight" 
-        enable-pan src='./island_2.glb' 
+        enable-pan src='./island_2.glb'
         ar ar-modes="webxr scene-viewer quick-look"
         camera-controls 
         enable-pan 
@@ -67,7 +67,7 @@
         data-position="15.6116381187966m 6.402890192149521m 7.410681504706385m" 
         data-normal="-0.06744800715356736m 0.9403464876600586m 0.3334655146734123m" 
         data-visibility-attribute="visible"
-        data-target="15.6116381187966m 6.402890192149521m 7.410681504706385m"
+        data-target="15m -18m -84m"
         >
           <div class="HotspotAnnotation">Tokennomic</div>
       </button>
@@ -78,7 +78,7 @@
         data-position="17.639094300976467m 6.981488777235602m -4.673789700264038m" 
         data-normal="0.11157101174070311m 0.9887687838192699m 0.09943943626005725m" 
         data-visibility-attribute="visible"
-        data-target="17.639094300976467m 6.981488777235602m -4.673789700264038m"
+        data-target="16m -16m -93m"
         >
           <div class="HotspotAnnotation">About</div>
       </button>
@@ -87,9 +87,10 @@
           <div class="update-bar"></div>
       </div>
 
-      <button slot="ar-button" id="ar-button">
-        View in your space
+      <button class="btn-back">
+        Back
       </button>
+      
     </model-viewer>
   </body>
 </html>
@@ -104,7 +105,12 @@
   }
 
   modelViewer1.querySelectorAll('button').forEach((hotspot) => {
-    console.log("hello hotspot", hotspot);
     hotspot.addEventListener('click', () => annotationClicked(hotspot));
   });
+
+  const btnBack = document.querySelector(".btn-back");
+  btnBack.onclick = () => {
+    modelViewer1.cameraTarget = "0 0 0";
+  }
+
 </script>
